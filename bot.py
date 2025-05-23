@@ -1,6 +1,7 @@
 from aiogram import Bot, Dispatcher
 from aiogram.types import Message
 from aiogram.enums import ParseMode
+from aiogram.client.default import DefaultBotProperties
 import asyncio
 
 from config import BOT_TOKEN
@@ -8,7 +9,10 @@ from database.base import init_db
 from handlers import start
 
 async def main():
-    bot = Bot(token=BOT_TOKEN, parse_mode=ParseMode.HTML)
+    bot = Bot(
+        token=BOT_TOKEN,
+        default=DefaultBotProperties(parse_mode=ParseMode.HTML)
+    )
     dp = Dispatcher()
     
     await init_db()
