@@ -17,6 +17,12 @@ from database.db import init_db  #اجرای اولیه برای ساخت دیت
 proxy_url = "http://51.81.245.3:17981"  # ← اینجا پراکسی خودت رو بذار
 session = AiohttpSession(proxy=proxy_url)
 
+# ثبت هندلرها
+start.register_handlers(dp)
+add_task.register_handlers(dp)
+add_phase.register_handlers(dp)
+auth.register_handlers(dp)
+
 # راه‌اندازی بات و دیسپچر
 bot = Bot(
     token="7972234523:AAEsQ18N_JsdBrhfFZ8xK3MZ5kHjy_Ox4iI",
