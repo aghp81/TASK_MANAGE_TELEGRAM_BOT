@@ -1,0 +1,5 @@
+aiogram[fastapi]
+SQLAlchemy
+aiosqlite
+python-dotenv
+apscheduler
