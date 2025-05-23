@@ -10,9 +10,10 @@ class User(Base):
     __tablename__ = 'users'
 
     id = Column(Integer, primary_key=True)
-    telegram_id = Column(Integer, unique=True, nullable=False, index=True)
+    telegram_id = Column(Integer, unique=True, nullable=False)
     username = Column(String)
     full_name = Column(String)
+    role = Column(String, default="member")  # نقش‌ها: admin, manager, member
 
     tasks = relationship("Task", back_populates="user")
 
